@@ -1,4 +1,9 @@
-# p4v
+#
+# Dockerfile for the Perforce Helix Clients.
+#
+# Robert Haines.
+#
+# BSD Licenced. See LICENCE for details.
 #
 
 FROM debian:sid
