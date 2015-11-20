@@ -21,12 +21,15 @@ docker build -t <tag> .
 
 Use the following incantations to run each of the tools within this image. Note that the tools that have graphical interfaces need to be able to open a window on your local X server.
 
+The tools all run as the user `p4v` within the container but you can tell `docker` to run the container as another user with the `-u` switch, as shown in the examples below.
+
 ### Helix administration tool
 
 ```shell
 docker run -it --rm \
   --name p4admin \
-  --volume=$HOME/.p4admin:/root/.p4admin \
+  --volume=$HOME/.p4admin:/home/p4v/.p4admin \
+  --volume=$HOME/.cache:/home/p4v/.cache \
   --volume=/tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -u $UID \
@@ -38,7 +41,8 @@ docker run -it --rm \
 ```shell
 docker run -it --rm \
   --name p4merge \
-  --volume=$HOME/.p4merge:/root/.p4merge \
+  --volume=$HOME/.p4merge:/home/p4v/.p4merge \
+  --volume=$HOME/.cache:/home/p4v/.cache \
   --volume=$(pwd):/opt/work \
   --volume=/tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
@@ -46,12 +50,15 @@ docker run -it --rm \
   hainesr/p4v /opt/p4v/bin/p4merge <args>
 ```
 
+Replace `<args>` with `-h` for more information.
+
 ### Visual client
 
 ```shell
 docker run -it --rm \
   --name p4v \
-  --volume=$HOME/.p4qt:/root/.p4qt \
+  --volume=$HOME/.p4qt:/home/p4v/.p4qt \
+  --volume=$HOME/.cache:/home/p4v/.cache \
   --volume=/tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -u $UID \
@@ -79,15 +86,16 @@ I like to wrap the commands above in a function so that I can run them as if the
 p4merge() {
   docker run -it --rm \
     --name p4merge \
-    --volume=$HOME/.p4merge:/root/.p4merge \
+    --volume=$HOME/.config/p4merge:/home/p4v/.p4merge \
+    --volume=$HOME/.cache:/home/p4v/.cache \
     --volume=$(pwd):/opt/work \
     --volume=/tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY=unix$DISPLAY \
     -u $UID \
     hainesr/p4v /opt/p4v/bin/p4merge "$@"
-} > /dev/null 2>&1
+}
 ```
 
-This runs `p4merge`, passing arguments through as required and hiding any unnecessary output to the console.
+This runs `p4merge`, passing arguments through as required.
 
 See [my dotfiles](https://github.com/hainesr/dotfiles) for more details.
