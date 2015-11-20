@@ -30,4 +30,10 @@ RUN apt-get update -q \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+ENV HOME /home/p4v
+RUN useradd --create-home --home-dir $HOME --gid users p4v \
+	&& chown -R p4v:users $HOME \
+  && chown -R p4v:users /opt
+
 WORKDIR /opt/work
+USER p4v
