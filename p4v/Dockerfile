@@ -13,15 +13,15 @@ COPY p4v.tgz /tmp/p4v.tgz
 RUN apt-get update -q \
   && DEBIAN_FRONTEND=noninteractive \
     apt-get install -qy \
-    libgl1-mesa-dri \
-    libgl1-mesa-glx \
-    libxrender1 \
-    libxi6 \
-    xkb-data \
+    libdbus-1-3 \
     libfontconfig1 \
     libfreetype6 \
-    libdbus-1-3 \
+    libgl1-mesa-dri \
+    libgl1-mesa-glx \
+    libxi6 \
     libxml2 \
+    libxrender1 \
+    xkb-data \
     --no-install-recommends \
   && mkdir -p /opt/p4v \
   && mkdir -p /opt/work \
