@@ -47,10 +47,10 @@ docker run -it --rm \
   --volume=/tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -u $UID \
-  hainesr/p4v p4merge <args>
+  hainesr/p4v p4merge [args]
 ```
 
-Replace `<args>` with `-h` for more information.
+Replace `[args]` with `-h` for more information.
 
 ### Visual client
 
@@ -72,17 +72,17 @@ docker run -it --rm \
   --name p4vc \
   --volume=$(pwd):/opt/work \
   -u $UID \
-  hainesr/p4v p4vc <args>
+  hainesr/p4v p4vc [args]
 ```
 
-Replace `<args>` with `help` for more details.
+Replace `[args]` with `help` for more details.
 
 ### Running other programs in the image
 
 You can run any other program that is installed in the image by simply calling it as normal. For example, to run `bash`:
 
 ```shell
-docker run -it --rm hainesr/p4v /bin/bash <args>
+docker run -it --rm hainesr/p4v /bin/bash [args]
 ```
 
 Any arguments you specify will be passed to the program you are running as normal.
