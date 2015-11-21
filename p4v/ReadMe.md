@@ -33,7 +33,7 @@ docker run -it --rm \
   --volume=/tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -u $UID \
-  hainesr/p4v /opt/p4v/bin/p4admin
+  hainesr/p4v p4admin
 ```
 
 ### Visual merge tool
@@ -62,7 +62,7 @@ docker run -it --rm \
   --volume=/tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -u $UID \
-  hainesr/p4v /opt/p4v/bin/p4v
+  hainesr/p4v p4v
 ```
 
 ### Command-line tool
@@ -73,7 +73,7 @@ docker run -it --rm \
   --volume=$(pwd):/opt/work \
   -e LD_LIBRARY_PATH=/opt/p4v/lib/icu:/opt/p4v/lib/openssl \
   -u $UID \
-  hainesr/p4v /opt/p4v/bin/p4vc <args>
+  hainesr/p4v p4vc <args>
 ```
 
 Replace `<args>` with `help` for more details.
