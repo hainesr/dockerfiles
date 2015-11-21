@@ -47,7 +47,7 @@ docker run -it --rm \
   --volume=/tmp/.X11-unix:/tmp/.X11-unix \
   -e DISPLAY=unix$DISPLAY \
   -u $UID \
-  hainesr/p4v /opt/p4v/bin/p4merge <args>
+  hainesr/p4v p4merge <args>
 ```
 
 Replace `<args>` with `-h` for more information.
@@ -92,7 +92,7 @@ p4merge() {
     --volume=/tmp/.X11-unix:/tmp/.X11-unix \
     -e DISPLAY=unix$DISPLAY \
     -u $UID \
-    hainesr/p4v /opt/p4v/bin/p4merge "$@"
+    hainesr/p4v p4merge "$@"
 }
 ```
 
