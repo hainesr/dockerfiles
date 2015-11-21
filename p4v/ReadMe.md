@@ -71,7 +71,6 @@ docker run -it --rm \
 docker run -it --rm \
   --name p4vc \
   --volume=$(pwd):/opt/work \
-  -e LD_LIBRARY_PATH=/opt/p4v/lib/icu:/opt/p4v/lib/openssl \
   -u $UID \
   hainesr/p4v p4vc <args>
 ```

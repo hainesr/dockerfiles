@@ -22,6 +22,7 @@ if [ "$1" = 'p4v' ]; then
 fi
 
 if [ "$1" = 'p4vc' ]; then
+  export LD_LIBRARY_PATH=/opt/p4v/lib/icu:/opt/p4v/lib/openssl
   exec /opt/p4v/bin/p4vc "${@:2}"
 fi
 
