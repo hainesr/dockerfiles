@@ -78,6 +78,16 @@ docker run -it --rm \
 
 Replace `<args>` with `help` for more details.
 
+### Running other programs in the image
+
+You can run any other program that is installed in the image by simply calling it as normal. For example, to run `bash`:
+
+```shell
+docker run -it --rm hainesr/p4v /bin/bash <args>
+```
+
+Any arguments you specify will be passed to the program you are running as normal.
+
 ## Using Bash functions to run the tools more natively
 
 I like to wrap the commands above in a function so that I can run them as if the tools were installed in my `PATH` as normal. For example (`p4merge`):
