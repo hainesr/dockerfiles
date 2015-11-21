@@ -37,3 +37,7 @@ RUN useradd --create-home --home-dir $HOME --gid users p4v \
 
 WORKDIR /opt/work
 USER p4v
+
+COPY entrypoint.sh /opt/p4v/bin/
+
+ENTRYPOINT ["/opt/p4v/bin/entrypoint.sh"]
