@@ -17,5 +17,12 @@ RUN apt-get update -q \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
+ENV HOME /home/mencoder
+RUN useradd --create-home --home-dir $HOME --gid users mencoder \
+	&& chown -R mencoder:users $HOME
+
+WORKDIR $HOME
+USER mencoder
+
 ENTRYPOINT ["mencoder"]
 CMD ["-list-options"]
