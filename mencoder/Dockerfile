@@ -19,7 +19,7 @@ RUN apt-get update -q \
 
 ENV HOME /home/mencoder
 RUN useradd --create-home --home-dir $HOME --gid users mencoder \
-	&& chown -R mencoder:users $HOME
+  && chown -R mencoder:users $HOME
 
 WORKDIR $HOME
 USER mencoder
