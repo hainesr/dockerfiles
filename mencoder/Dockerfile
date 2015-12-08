@@ -19,9 +19,10 @@ RUN apt-get update -q \
 
 ENV HOME /home/mencoder
 RUN useradd --create-home --home-dir $HOME --gid users mencoder \
+  && mkdir -p $HOME/video \
   && chown -R mencoder:users $HOME
 
-WORKDIR $HOME
+WORKDIR $HOME/video
 USER mencoder
 
 ENTRYPOINT ["mencoder"]
