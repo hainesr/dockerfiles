@@ -15,7 +15,7 @@ In general you just need to build these images in the usual way:
 $ docker build -t <tag> <build-dir>
 ```
 
-If a particular image requires any special steps these will be detailed in a ReadMe in the image directory.
+If a particular image requires any special steps, for either building or running, these will be detailed in a ReadMe in the image directory.
 
 ### Licence
 
