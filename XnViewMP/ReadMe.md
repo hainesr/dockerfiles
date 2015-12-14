@@ -42,7 +42,7 @@ I like to wrap the command to run the image in a function so that I can run XnVi
 xnview() {
   local pics_dir=$(pwd)
   if [[ -d "$1" && -r "$1" ]]; then
-    pics_dir="$1"
+    pics_dir=$(readlink -m "$1")
   fi
 
   docker run -it --rm \
