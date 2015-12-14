@@ -63,6 +63,6 @@ With this you can run `xnview` as follows:
 $ xnview [directory]
 ```
 
-If the directory argument is provided, and it is readable, xnview will use this as its pictures directory. Otherwise it will use the current directory.
+If the directory argument is provided, and it is readable, xnview will use this as its pictures directory, otherwise it will use the current directory.
 
 See [my dotfiles](https://github.com/hainesr/dotfiles) for more details.
