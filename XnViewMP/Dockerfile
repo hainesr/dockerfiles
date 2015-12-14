@@ -36,6 +36,7 @@ RUN apt-get update -q \
 	&& chown -R xnview:users $HOME
 
 ADD http://download.xnview.com/XnViewMP-linux-x64.tgz /opt/xnview.tgz
+COPY entrypoint.sh /opt/
 
 RUN cd /opt \
   && tar xzf xnview.tgz \
@@ -44,3 +45,5 @@ RUN cd /opt \
 
 WORKDIR $HOME/pics
 USER xnview
+
+ENTRYPOINT ["/opt/entrypoint.sh"]
