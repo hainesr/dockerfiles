@@ -54,7 +54,7 @@ xnview() {
     -e DISPLAY=unix$DISPLAY \
     -u $UID \
     hainesr/xnview xnview
-}
+} > /dev/null
 ```
 
 With this you can run `xnview` as follows:
@@ -63,6 +63,6 @@ With this you can run `xnview` as follows:
 $ xnview [directory]
 ```
 
-If the directory argument is provided, and it is readable, xnview will use this as its pictures directory, otherwise it will use the current directory.
+If the directory argument is provided, and it is readable, xnview will use this as its pictures directory, otherwise it will use the current directory. This also suppresses the console output from XnView; to enable it again, for debugging purposes, delete just the `> /dev/null` part of the last line.
 
 See [my dotfiles](https://github.com/hainesr/dotfiles) for more details.
