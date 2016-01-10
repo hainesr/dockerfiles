@@ -26,10 +26,10 @@ RUN apt-get update -q \
     texlive-math-extra \
     --no-install-recommends \
   && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
-
-RUN mkdir /root/work \
+  && rm -rf /var/lib/apt/lists/* \
+  && mkdir /root/work \
   && chmod 755 /root
+
 WORKDIR /root/work
 
 COPY entrypoint.sh /root/
