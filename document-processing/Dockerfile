@@ -28,7 +28,8 @@ RUN apt-get update -q \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /root/work
+RUN mkdir /root/work \
+  && chmod 755 /root
 WORKDIR /root/work
 
 COPY entrypoint.sh /root/
