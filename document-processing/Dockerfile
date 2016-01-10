@@ -31,5 +31,5 @@ RUN apt-get update -q \
 RUN mkdir /root/work
 WORKDIR /root/work
 
-COPY entrypoint.sh /root
+COPY entrypoint.sh /root/
 ENTRYPOINT ["/root/entrypoint.sh"]
