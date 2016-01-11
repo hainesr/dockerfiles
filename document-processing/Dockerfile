@@ -27,6 +27,7 @@ RUN apt-get update -q \
     texlive-latex-extra \
     texlive-latex-recommended \
     texlive-math-extra \
+    texlive-science \
     --no-install-recommends \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
