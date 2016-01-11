@@ -19,6 +19,7 @@ RUN apt-get update -q \
     latex-xcolor \
     latexmk \
     texlive-bibtex-extra \
+    texlive-fonts-extra \
     texlive-fonts-recommended \
     texlive-latex-base \
     texlive-latex-extra \
