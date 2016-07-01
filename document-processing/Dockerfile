@@ -14,6 +14,7 @@ MAINTAINER Robert Haines <robert.haines@manchester.ac.uk>
 RUN apt-get update -q \
   && DEBIAN_FRONTEND=noninteractive \
     apt-get install -qy \
+    cm-super \
     fontconfig \
     latex-beamer \
     latex-xcolor \
