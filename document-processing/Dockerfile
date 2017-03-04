@@ -16,6 +16,7 @@ RUN apt-get update -q \
     apt-get install -qy \
     cm-super \
     fontconfig \
+    ghostscript \
     latex-beamer \
     latex-xcolor \
     latexmk \
